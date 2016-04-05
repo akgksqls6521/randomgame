@@ -15,10 +15,10 @@ public class ResultActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_result);
 
-        mResult=(TextView) findViewById(R.id.result);
-        mResult.setText("결과");
+        mResult=(TextView) findViewById(R.id.     result);
+        mResult.setText("배가 고프면 밥을 먹어!");
     }
 }
 
