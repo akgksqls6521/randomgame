@@ -56,6 +56,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
             Toast.makeText(this, name + "씨, 배고파요!", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, ResultActivity.class);
+            intent.putExtra("name",name);
+            intent.putExtra("age",10);
             startActivity(intent);
 
         } catch(NullPointerException e){//NullPointerException이 실행되면 이 부분이 실행됨
