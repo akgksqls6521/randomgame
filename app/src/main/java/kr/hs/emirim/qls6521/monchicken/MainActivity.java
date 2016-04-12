@@ -25,14 +25,14 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         mName = (EditText)findViewById(R.id.name);//find값으로 찾아주세요!, 타입이 안맞다! 타입캐스팅을 해줘야함
         mButton = (Button) findViewById(R.id.btn_show_me_the_chicken);
         mButton.setOnClickListener(this);//익명클래스 널 클릭했을때 일어나는 일은 mainActivity에서 알아서 해줄거야!
-
+//온클릭리스너? 버튼이 클릭되었는지 감시하는 녀석 ()안에 있는 건 이벤트 핸들러 클래스
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         mName.setText(null);
-    }
+    }//액티비티가 다시 시작되었을때 호출
 
     /**
      * Called when a view has been clicked
@@ -59,6 +59,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             intent.putExtra("name",name);
             intent.putExtra("age",10);
             startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
 
         } catch(NullPointerException e){//NullPointerException이 실행되면 이 부분이 실행됨
 

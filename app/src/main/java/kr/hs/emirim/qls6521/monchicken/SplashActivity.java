@@ -14,16 +14,18 @@ public class SplashActivity extends ActionBarActivity {
 
         setContentView(R.layout.activity_splash);
 
-        Handler handler=new Handler();//핸들러 객체생성
+        Handler handler = new Handler();//핸들러 객체생성, 타이머도 사용가능
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
-                finish();//현재액티비티를소멸시키는것이다
+                overridePendingTransition(0, R.anim.zoom_exit);
+                finish();
             }
-        },3000);
+        }, 3000);
 
     }
-
 }
+
+
